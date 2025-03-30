@@ -41,12 +41,12 @@ document.querySelector('#slider').addEventListener('change', (e) => {
 	video.volume = e.target.valueAsNumber/100;
 })
 
-document.querySelector('#vintage').addEventListener('change', () => {
-	video.classList.add('oldSchool')
+document.querySelector('#vintage').addEventListener('click', () => {
+	video.classList.add('oldSchool');
 })
 
-document.querySelector('#orig').addEventListener('change', () => {
-	video.classList.remove('oldSchool')
+document.querySelector('#orig').addEventListener('click', () => {
+	video.classList.remove('oldSchool');
 })
 
 // document.querySelector("#play").addEventListener("click", function() {
