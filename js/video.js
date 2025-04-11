@@ -9,29 +9,29 @@ window.addEventListener("load", function () {
 
 });
 
-document.querySelector('#play').addEventListener('click', () => {
+document.querySelector('#play').addEventListener('click', function () {
 	video.play();
 	document.querySelector('#volume').textContent=document.querySelector('#slider').valueAsNumber;
 	console.log('Play video.');
 })
 
-document.querySelector('#pause').addEventListener('click', () => {
+document.querySelector('#pause').addEventListener('click', function () {
 	video.pause();
 	console.log('Pause video.');
 })
 
-document.querySelector('#slower').addEventListener('click', () => {
+document.querySelector('#slower').addEventListener('click', function () {
 	video.playbackRate *= 0.9;
 	console.log('Slow down video.');
 	console.log('Speed is '+video.playbackRate);
 })
 
-document.querySelector('#faster').addEventListener('click', () => {
+document.querySelector('#faster').addEventListener('click', function () {
 	video.playbackRate /= 0.9;
 	console.log('Speed up video.');
 	console.log('Speed is '+video.playbackRate);
 })
-document.querySelector('#skip').addEventListener('click', () => {
+document.querySelector('#skip').addEventListener('click', function () {
 	console.log('Skip ahead.');
 	const newTime = video.currentTime + 10;
 	if (newTime >= video.duration) {
@@ -42,7 +42,7 @@ document.querySelector('#skip').addEventListener('click', () => {
 	console.log('Video current time is '+video.currentTime);
 })
 
-document.querySelector('#mute').addEventListener('click', () => {
+document.querySelector('#mute').addEventListener('click', function () {
 	video.muted = !video.muted;
 	if (video.muted) {
 		document.querySelector('#slider').valueAsNumber=0;
@@ -55,21 +55,16 @@ document.querySelector('#mute').addEventListener('click', () => {
 	}
 })
 
-document.querySelector('#slider').addEventListener('change', (e) => {
+document.querySelector('#slider').addEventListener('change', function (e) {
 	video.volume = e.target.valueAsNumber/100;
 	document.querySelector('#volume').innerHTML=document.querySelector('#slider').value;
 	console.log('the current value is '+video.volume)
 })
 
-document.querySelector('#vintage').addEventListener('click', () => {
+document.querySelector('#vintage').addEventListener('click', function () {
 	video.classList.add('oldSchool');
 })
 
-document.querySelector('#orig').addEventListener('click', () => {
+document.querySelector('#orig').addEventListener('click', function () {
 	video.classList.remove('oldSchool');
 })
-
-// document.querySelector("#play").addEventListener("click", function() {
-// 	console.log("Play Video");
-// });
-
