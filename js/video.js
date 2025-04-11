@@ -1,10 +1,10 @@
-var video = document.querySelector('#player1');
+const video = document.querySelector('#player1');
 
 window.addEventListener("load", function () {
 	console.log("Good job opening the window")
-	video.setAttribute('autoplay', 'false');
+	video.autoplay=false;
 	console.log("Set autoplay to false.")
-	video.setAttribute('loop', 'false');
+	video.loop=false;
 	console.log("Set loop to false.")
 
 });
