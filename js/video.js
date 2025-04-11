@@ -11,7 +11,7 @@ window.addEventListener("load", function () {
 
 document.querySelector('#play').addEventListener('click', function () {
 	video.play();
-	document.querySelector('#volume').textContent=document.querySelector('#slider').valueAsNumber;
+	document.querySelector('#volume').textContent=document.querySelector('#slider').valueAsNumber+'%';
 	console.log('Play video.');
 })
 
@@ -46,18 +46,20 @@ document.querySelector('#mute').addEventListener('click', function () {
 	video.muted = !video.muted;
 	if (video.muted) {
 		document.querySelector('#slider').valueAsNumber=0;
-		document.querySelector('#volume').innerHTML=document.querySelector('#slider').value;
+		document.querySelector('#volume').innerHTML=document.querySelector('#slider').value+'%';
+		document.querySelector('#mute').innerHTML='Unmute'
 		console.log('Mute.');
 	}else{
 		document.querySelector('#slider').valueAsNumber=100;
-		document.querySelector('#volume').innerHTML=document.querySelector('#slider').value;
+		document.querySelector('#volume').innerHTML=document.querySelector('#slider').value+'%';
+		document.querySelector('#mute').innerHTML='Mute'
 		console.log('Unmute.')
 	}
 })
 
 document.querySelector('#slider').addEventListener('change', function (e) {
 	video.volume = e.target.valueAsNumber/100;
-	document.querySelector('#volume').innerHTML=document.querySelector('#slider').value;
+	document.querySelector('#volume').innerHTML=document.querySelector('#slider').value+'%';
 	console.log('the current value is '+video.volume)
 })
 
